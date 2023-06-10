@@ -11,7 +11,17 @@ import SwiftUI
 struct CineMatesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                DiscoverView()
+                    .tabItem {
+                        Image(systemName: "popcorn")
+                    }
+                FavouritesView()
+                    .tabItem {
+                        Image(systemName: "heart.fill")
+                    }
+            }
+            .attachPartialSheetToRoot()
         }
     }
 }
